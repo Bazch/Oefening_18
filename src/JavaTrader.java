@@ -6,6 +6,7 @@ public class JavaTrader {
         amazon.koop(100);
         oracle.koop(200);
         oracle.koop(200);
+        oracle.koop(600);
 
         System.out.println(amazon.toString());
         System.out.println(oracle.toString());

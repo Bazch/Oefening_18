@@ -2,6 +2,7 @@ public class Aandelen {
     private String symbool = "AMZN";
     private int aantal;
     private double totaleKosten;
+    private static int MAX_AANDELEN_KOPEN = 500;
 
     public Aandelen(String sym, int aant){
         setSymbool(sym);
@@ -33,13 +34,20 @@ public class Aandelen {
     private void setTotaleKosten(double totaleKostenIn){
         totaleKosten = totaleKostenIn;
     }
-    public void koop(int aantalIn){
-        int nieuwAantal = getAantal() + aantalIn;
-        double kosten = aantalIn * 1919.65;
-        double nieuweKosten = getTotaleKosten() + kosten;
-        setAantal(nieuwAantal);
-        setTotaleKosten(nieuweKosten);
-        System.out.println("Transactie: " + aantalIn + " aandelen " + getSymbool() + " kosten: " + kosten);
+    public void koop(int aantalIn) {
+        if (aantalIn <= 500) {
+
+
+            int nieuwAantal = getAantal() + aantalIn;
+            double kosten = aantalIn * 1919.65;
+            double nieuweKosten = getTotaleKosten() + kosten;
+            setAantal(nieuwAantal);
+            setTotaleKosten(nieuweKosten);
+            System.out.println("Transactie: " + aantalIn + " aandelen " + getSymbool() + " kosten: " + kosten);
+        } else {
+            System.out.println("Transactie: " + aantalIn + " aandelen " + getSymbool() + " mislukt. Maximaal:" +
+                    MAX_AANDELEN_KOPEN);
+        }
     }
 
     @Override
