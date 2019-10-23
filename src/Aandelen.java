@@ -1,5 +1,5 @@
 public class Aandelen {
-    private String symbool = "AMZN";
+    private String symbool;
     private int aantal;
     private double totaleKosten;
     private static int MAX_AANDELEN_KOPEN = 500;
@@ -13,19 +13,15 @@ public class Aandelen {
     }
 
     public String getSymbool(){
-
         return symbool;
     }
     public int getAantal(){
-
         return aantal;
     }
     public double getTotaleKosten(){
-
         return totaleKosten;
     }
     private void setSymbool(String symboolIn){
-
         symbool = symboolIn;
     }
     private void setAantal(int aantalIn){
@@ -34,17 +30,22 @@ public class Aandelen {
     private void setTotaleKosten(double totaleKostenIn){
         totaleKosten = totaleKostenIn;
     }
+
     public void koop(int aantalIn) {
-        if (aantalIn <= 500) {
-
-
+        if (aantalIn <= MAX_AANDELEN_KOPEN) {
             int nieuwAantal = getAantal() + aantalIn;
-            double kosten = aantalIn * 1919.65;
-            double nieuweKosten = getTotaleKosten() + kosten;
-            setAantal(nieuwAantal);
-            setTotaleKosten(nieuweKosten);
-            System.out.println("Transactie: " + aantalIn + " aandelen " + getSymbool() + " kosten: " + kosten);
-        } else {
+            float koers = Koers.van(getSymbool());
+            if (koers > 0) {
+                double kosten = aantalIn * koers;
+                double nieuweKosten = getTotaleKosten() + kosten;
+                setAantal(nieuwAantal);
+                setTotaleKosten(nieuweKosten);
+                System.out.println("Transactie: " + aantalIn + " aandelen " + getSymbool() + " kosten: " + kosten);
+            }else {
+                System.out.println("Transactie: " + aantalIn + " aandelen " + getSymbool() + " mislukt. Geen " +
+                        "koersinformatie beschikbaar.");
+            }
+        }else {
             System.out.println("Transactie: " + aantalIn + " aandelen " + getSymbool() + " mislukt. Maximaal:" +
                     MAX_AANDELEN_KOPEN);
         }
