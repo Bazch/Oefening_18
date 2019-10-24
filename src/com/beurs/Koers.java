@@ -1,3 +1,5 @@
+package com.beurs;
+
 public class Koers {
     private static float AMZN = 1_919.65f;
     private static float ORCL = 47.81f;

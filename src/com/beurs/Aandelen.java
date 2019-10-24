@@ -1,3 +1,5 @@
+package com.beurs;
+
 public class Aandelen {
     private String symbool;
     private int aantal;

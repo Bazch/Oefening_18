@@ -1,3 +1,5 @@
+import com.beurs.Aandelen;
+
 public class JavaTraderArray {
 
     static Aandelen amazon;
@@ -25,7 +27,7 @@ public class JavaTraderArray {
             }else continue;
         }
         System.out.println(amazon.toString());
-        System.out.println(oracle.toString());
         System.out.println(apple.toString());
+        System.out.println(oracle.toString());
     }
 }

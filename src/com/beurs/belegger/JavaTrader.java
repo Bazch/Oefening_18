@@ -1,3 +1,7 @@
+package com.beurs.belegger;
+
+import com.beurs.Aandelen;
+
 public class JavaTrader {
 
     private static Aandelen AANDELEN;
