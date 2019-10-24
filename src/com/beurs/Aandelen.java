@@ -8,7 +8,6 @@ public class Aandelen {
     private Kosten kosten = new Kosten();
     private Dividend dividend = new Dividend();
 
-
     public Aandelen(String sym, int aant){
         setSymbool(sym);
         koop(aant);
