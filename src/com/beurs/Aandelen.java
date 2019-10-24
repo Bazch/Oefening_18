@@ -5,6 +5,9 @@ public class Aandelen {
     private int aantal;
     private double totaleKosten;
     private static int MAX_AANDELEN_KOPEN = 500;
+    private Kosten kosten = new Kosten();
+    private Dividend dividend = new Dividend();
+
 
     public Aandelen(String sym, int aant){
         setSymbool(sym);
@@ -51,6 +54,13 @@ public class Aandelen {
             System.out.println("Transactie: " + aantalIn + " aandelen " + getSymbool() + " mislukt. Maximaal:" +
                     MAX_AANDELEN_KOPEN);
         }
+    }
+
+    public void berekenTransactieKosten() {
+    kosten.berekenTransactieKosten(this.symbool, this.aantal);
+    }
+    public void berekenDividend(){
+        dividend.berekenDividend(this.symbool, Koers.van(this.symbool), this.aantal);
     }
 
     @Override
