@@ -14,4 +14,11 @@ public class PrioriteitsAandelen extends Aandelen{
     public PrioriteitsAandelen(String sym){
         super(sym, 100);
     }
+
+    @Override
+    public String toString(){
+        super.toString();
+        return"Aandelen: symbool= "+getSymbool()+", aantal= "+getAantal()+", totale kosten= "+getTotaleKosten()+
+                " extra stemrechtfactor: " +getStemRechtFactor();
+    }
 }

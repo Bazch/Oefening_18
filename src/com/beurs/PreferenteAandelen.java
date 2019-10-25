@@ -15,4 +15,11 @@ public class PreferenteAandelen extends Aandelen {
         super(sym, value);
     }
 
+    @Override
+    public String toString(){
+        super.toString();
+        return"Aandelen: symbool= "+getSymbool()+", aantal= "+getAantal()+", totale kosten= "+getTotaleKosten()+
+                " extra dividend percentage: "+getExtraDividendPercentage();
+    }
+
 }
