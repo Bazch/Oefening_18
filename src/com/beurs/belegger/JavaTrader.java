@@ -13,8 +13,7 @@ public class JavaTrader {
 //        aandelenArray[0] = amazon;
 //        aandelenArray[1] = oracle;
 //        aandelenArray[2] = apple;
-//        for(Aandelen i : aandelenArray)
-//                {
+//        for(Aandelen i : aandelenArray){
 //            System.out.println(i.toString());
 //        }
 
