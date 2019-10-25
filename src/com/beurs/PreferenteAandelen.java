@@ -11,8 +11,8 @@ public class PreferenteAandelen extends Aandelen {
         this.extraDividendPercentage = extraDividendPercentage;
     }
 
-    public PreferenteAandelen(String sym, int value){
-        super(sym, value);
+    public PreferenteAandelen(String sym){
+        super(sym);
     }
 
     @Override

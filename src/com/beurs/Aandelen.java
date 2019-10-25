@@ -1,6 +1,6 @@
 package com.beurs;
 
-public class Aandelen {
+public class Aandelen implements BeleggingsInstrument {
     private String symbool;
     private int aantal;
     private double totaleKosten;
